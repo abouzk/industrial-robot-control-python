@@ -8,7 +8,7 @@ The system allows for "Sim-to-Real" workflow validation, generating RAPID trajec
 
 ## 2. Demo
 ![Robot Demo](https://github.com/user-attachments/assets/e34e325a-307f-4388-8681-522aef3eed3e)
-*(Note: Video demonstration of Python-driven trajectory execution in RobotStudio)*
+*(Note: Execution of a 100mm square trajectory. The robot utilizes z50 zoning for high-speed corner blending and fine points for precision starts/stops, as defined in the Python motion primitives.)*
 
 
 ## 3. System Architecture & Tech Stack
