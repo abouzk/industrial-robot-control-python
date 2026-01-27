@@ -6,7 +6,12 @@ This repository documents the architecture and implementation of an external con
 
 The system allows for "Sim-to-Real" workflow validation, generating RAPID trajectories in Python and executing them deterministically on the IRC5 controller.
 
-## 2. System Architecture & Tech Stack
+## 2. Demo
+![Robot Demo](https://github.com/user-attachments/assets/e34e325a-307f-4388-8681-522aef3eed3e)
+*(Note: Video demonstration of Python-driven trajectory execution in RobotStudio)*
+
+
+## 3. System Architecture & Tech Stack
 
 ### Controller Configuration (IRC5)
 To enable external control, the standard robot controller was architected with specific software options and background tasks:
@@ -19,7 +24,7 @@ To enable external control, the standard robot controller was architected with s
 ### Middleware Logic (State Machine)
 Implemented a `RECORD` structure in RAPID (`motion_program_state_type`) to serve as a shared memory block. This acts as a request-response state machine, ensuring deterministic communication between the asynchronous Python script and the real-time robot controller.
 
-## 3. Key Engineering Implementations
+## 4. Key Engineering Implementations
 
 ### A. Frame Definition (TCP & Work Objects)
 Decoupled the motion path from the robot's physical base to ensure portability:
@@ -31,14 +36,10 @@ Utilized specific zone data to balance cycle time vs. trajectory fidelity:
 * **`z50` (Zone 50mm):** Used for continuous path cornering (blending) to maintain high velocity.
 * **`fine`:** Used for start/stop target convergence to ensure sub-millimeter precision at waypoints.
 
-## 4. Safety Protocols (ISO 10218 Aligned)
+## 5. Safety Protocols (ISO 10218 Aligned)
 Verified safety integration required for collaborative workspaces:
 * **E-Stop Logic:** Mapped hardware interrupts to Category 0/1 stops.
 * **Recovery Sequence:** Validated the physical "Deadman Switch" and "Motor On" hardware sequence required to resume Python control after a safety violation.
-
-## 5. Demo
-![Robot Demo](https://github.com/user-attachments/assets/e34e325a-307f-4388-8681-522aef3eed3e)
-*(Note: Video demonstration of Python-driven trajectory execution in RobotStudio)*
 
 ## 6. Telemetry & Validation
 Real-time feedback from the controller is captured to verify path adherence. The graph below demonstrates the **Joint Position vs. Time** response, confirming that the physical robot (or simulator) is accurately tracking the Python-generated trajectory without packet loss or jitter.
