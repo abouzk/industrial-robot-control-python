@@ -7,7 +7,7 @@ This repository documents the architecture and implementation of an external con
 The system allows for "Sim-to-Real" workflow validation, generating RAPID trajectories in Python and executing them deterministically on the IRC5 controller.
 
 ## 2. Demo
-![Robot Demo](https://github.com/user-attachments/assets/e34e325a-307f-4388-8681-522aef3eed3e)
+[![Robot Demo](media/preview_thumbnail.png)](https://github.com/user-attachments/assets/e34e325a-307f-4388-8681-522aef3eed3e)
 *(Note: Execution of a 100mm square trajectory. The robot utilizes z50 zoning for high-speed corner blending and fine points for precision starts/stops, as defined in the Python motion primitives.)*
 
 
