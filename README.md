@@ -12,9 +12,8 @@ Unlike standard teach-pendant programming, this project validates a client-serve
 
 ## 2. Demo
 [![Robot Demo](media/preview_thumbnail.png)](https://github.com/user-attachments/assets/e34e325a-307f-4388-8681-522aef3eed3e)
-<sub>Click the image above to play the video demo</sub>
 
-*(Note: Execution of a 100mm square trajectory. The robot utilizes z50 zoning for high-speed corner blending and fine points for precision starts/stops.)*
+*(Note: Click the image above to play the video demo. Execution of a 100mm square trajectory. The robot utilizes z50 zoning for high-speed corner blending and fine points for precision starts/stops.)*
 
 ## 3. System Architecture & Tech Stack
 
